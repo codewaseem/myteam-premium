@@ -34,7 +34,7 @@ const createStyles = (
     font-size: ${rem("18px")};
     line-height: ${rem("28px")};
     height: 48px;
-    min-width: 153px;
+    padding: 7px 30px 9px;
     --border-size: 2px;
     font-weight: 600;
     border: 2px solid ${theme.color.primary.light};
