@@ -6,6 +6,7 @@ import { Button } from "../Button";
 import { ReactComponent as IconCog } from "~/assets/images/icon-cog.svg";
 import { ReactComponent as IconPerson } from "~/assets/images/icon-person.svg";
 import { ReactComponent as IconChart } from "~/assets/images/icon-chart.svg";
+import FormField from "../FormField";
 
 const baseStyles = (theme: Theme) => css`
   background-color: ${theme.color.primary.dark};
@@ -46,6 +47,7 @@ const ContactForm = () => {
           <div
             css={css`
               margin-top: 48px;
+              margin-bottom: 56px;
               > div {
                 height: 72px;
                 display: grid;
@@ -82,22 +84,20 @@ const ContactForm = () => {
           </div>
         </div>
         <div>
-          <form>
-            <label htmlFor="name">
-              <input id="name" type="text" />
-            </label>
-            <label htmlFor="email">
-              <input id="email" type="email" />
-            </label>
-            <label htmlFor="company_name">
-              <input id="company_name" type="text" />
-            </label>
-            <label htmlFor="title">
-              <input id="title" type="text" />
-            </label>
-            <label htmlFor="message">
-              <textarea id="message" />
-            </label>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+          >
+            <FormField label="Name" name="name" inputType="text" />
+            <FormField label="Email" name="email" inputType="email" />
+            <FormField
+              label="Company Name"
+              name="company_name"
+              inputType="text"
+            />
+            <FormField label="Title" name="title" inputType="text" />
+            <FormField label="Message" name="message" inputType="text" />
             <Button css={submitButtonStyles}>Submit</Button>
           </form>
         </div>
