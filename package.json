@@ -70,6 +70,7 @@
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/polyfill": "^7.8.7",
+    "@percy/storybook": "^3.3.0",
     "@storybook/addon-actions": "^5.3.13",
     "@storybook/addon-info": "^5.3.13",
     "@storybook/addon-storyshots": "^5.3.18",
