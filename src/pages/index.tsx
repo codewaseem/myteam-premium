@@ -10,7 +10,7 @@ import ContactUs from "../components/ContactUs";
 const Index: React.FC<InjectedIntlProps> = () => {
   return (
     <Layout>
-      <SEO title="Hello" />
+      <SEO />
       <HeroContent />
       <Team />
       <Testimonial />
