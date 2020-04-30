@@ -49,8 +49,8 @@ const prodPlugins = [
   {
     resolve: "gatsby-plugin-manifest",
     options: {
-      name: "CodeWaseem's Project",
-      short_name: "CodeWaseem",
+      name: "MyTeam By CodeWaseem",
+      short_name: "MyTeam",
       start_url: "/",
       background_color: "#2A292D",
       theme_color: "#2A292D",

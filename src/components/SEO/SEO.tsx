@@ -8,6 +8,7 @@ type Props = {
   /** Description text for the description meta tags */
   description?: string;
   keywords?: string;
+  seoImageUrl?: string;
 } & HelmetProps &
   InjectedIntlProps;
 
@@ -29,6 +30,7 @@ const SEO: React.FC<Props> = ({
   title,
   intl,
   keywords = "",
+  seoImageUrl,
 }) => {
   const { site }: { site?: SiteMetadataQuery } = useStaticQuery(
     graphql`
@@ -77,8 +79,11 @@ const SEO: React.FC<Props> = ({
           <meta property="og:title" content={title} />
           <meta property="og:description" content={metaDescription} />
           <meta property="og:locale" content={intl.locale} />
-          <meta property="og:image" content="/preview.jpg" />
-          <meta property="og:image:alt" content="/preview.jpg" />
+          <meta property="og:image" content={seoImageUrl || "/preview.jpg"} />
+          <meta
+            property="og:image:alt"
+            content={seoImageUrl || "/preview.jpg"}
+          />
           <meta property="twitter:card" content="summary_large_image" />
           {children}
         </Helmet>
