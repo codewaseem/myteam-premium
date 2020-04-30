@@ -1,11 +1,13 @@
 import React from "react";
 import { injectIntl, InjectedIntlProps } from "gatsby-plugin-intl";
+import loadable from "@loadable/component";
 import { Layout } from "~/components/Layout";
 import { SEO } from "~/components/SEO";
-import HeroContent from "~/components/HeroContent";
-import Team from "~/components/Team";
-import Testimonial from "../components/Testimonial";
-import ContactUs from "../components/ContactUs";
+
+const HeroContent = loadable(() => import("~/components/HeroContent"));
+const Team = loadable(() => import("~/components/Team"));
+const Testimonial = loadable(() => import("~/components/Testimonial"));
+const ContactUs = loadable(() => import("~/components/ContactUs"));
 
 const Index: React.FC<InjectedIntlProps> = () => {
   return (
