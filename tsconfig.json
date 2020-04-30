@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "target": "es5",
-    "module": "es6",
+    "module": "es2020",
     "types": ["node"],
     "moduleResolution": "node",
     "esModuleInterop": true,
