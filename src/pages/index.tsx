@@ -12,7 +12,7 @@ const ContactUs = loadable(() => import("~/components/ContactUs"));
 const Index: React.FC<InjectedIntlProps> = () => {
   return (
     <Layout>
-      <SEO title="Hello" />
+      <SEO />
       <HeroContent />
       <Team />
       <Testimonial />
