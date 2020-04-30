@@ -1,5 +1,245 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots ContactForm Desktop View 1`] = `
+<div
+  style={
+    Object {
+      "padding": "0",
+    }
+  }
+>
+  <div>
+    <div
+      className="css-ysaz4-componentContainerStyles-componentContainerStyles-componentContainerStyles-componentContainerStyles-componentContainerStyles-componentContainerStyles"
+    >
+      <div
+        className="css-gcchmi-componentContentStyles-componentContentStyles-componentContentStyles-componentContentStyles-componentContentStyles-componentContentStyles"
+      >
+        <div>
+          <h2>
+            Contact
+          </h2>
+          <h4>
+            Ask us about
+          </h4>
+          <div>
+            something
+          </div>
+        </div>
+        <div>
+          <form>
+            <label
+              htmlFor="name"
+            >
+              <input
+                id="name"
+                type="text"
+              />
+            </label>
+            <label
+              htmlFor="email"
+            >
+              <input
+                id="email"
+                type="email"
+              />
+            </label>
+            <label
+              htmlFor="company_name"
+            >
+              <input
+                id="company_name"
+                type="text"
+              />
+            </label>
+            <label
+              htmlFor="title"
+            >
+              <input
+                id="title"
+                type="text"
+              />
+            </label>
+            <label
+              htmlFor="message"
+            >
+              <textarea
+                id="message"
+              />
+            </label>
+            <button
+              className="css-pr8va5-StyledButton-ContactForm e13mtfop0"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ContactForm Mobile View 1`] = `
+<div
+  style={
+    Object {
+      "padding": "0",
+    }
+  }
+>
+  <div>
+    <div
+      className="css-ysaz4-componentContainerStyles-componentContainerStyles-componentContainerStyles-componentContainerStyles-componentContainerStyles-componentContainerStyles"
+    >
+      <div
+        className="css-gcchmi-componentContentStyles-componentContentStyles-componentContentStyles-componentContentStyles-componentContentStyles-componentContentStyles"
+      >
+        <div>
+          <h2>
+            Contact
+          </h2>
+          <h4>
+            Ask us about
+          </h4>
+          <div>
+            something
+          </div>
+        </div>
+        <div>
+          <form>
+            <label
+              htmlFor="name"
+            >
+              <input
+                id="name"
+                type="text"
+              />
+            </label>
+            <label
+              htmlFor="email"
+            >
+              <input
+                id="email"
+                type="email"
+              />
+            </label>
+            <label
+              htmlFor="company_name"
+            >
+              <input
+                id="company_name"
+                type="text"
+              />
+            </label>
+            <label
+              htmlFor="title"
+            >
+              <input
+                id="title"
+                type="text"
+              />
+            </label>
+            <label
+              htmlFor="message"
+            >
+              <textarea
+                id="message"
+              />
+            </label>
+            <button
+              className="css-pr8va5-StyledButton-ContactForm e13mtfop0"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ContactForm Tablet View 1`] = `
+<div
+  style={
+    Object {
+      "padding": "0",
+    }
+  }
+>
+  <div>
+    <div
+      className="css-ysaz4-componentContainerStyles-componentContainerStyles-componentContainerStyles-componentContainerStyles-componentContainerStyles-componentContainerStyles"
+    >
+      <div
+        className="css-gcchmi-componentContentStyles-componentContentStyles-componentContentStyles-componentContentStyles-componentContentStyles-componentContentStyles"
+      >
+        <div>
+          <h2>
+            Contact
+          </h2>
+          <h4>
+            Ask us about
+          </h4>
+          <div>
+            something
+          </div>
+        </div>
+        <div>
+          <form>
+            <label
+              htmlFor="name"
+            >
+              <input
+                id="name"
+                type="text"
+              />
+            </label>
+            <label
+              htmlFor="email"
+            >
+              <input
+                id="email"
+                type="email"
+              />
+            </label>
+            <label
+              htmlFor="company_name"
+            >
+              <input
+                id="company_name"
+                type="text"
+              />
+            </label>
+            <label
+              htmlFor="title"
+            >
+              <input
+                id="title"
+                type="text"
+              />
+            </label>
+            <label
+              htmlFor="message"
+            >
+              <textarea
+                id="message"
+              />
+            </label>
+            <button
+              className="css-pr8va5-StyledButton-ContactForm e13mtfop0"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots ContactUs Desktop View 1`] = `
 <div
   style={
