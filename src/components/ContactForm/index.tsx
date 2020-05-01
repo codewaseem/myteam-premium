@@ -1,12 +1,13 @@
 import React from "react";
 import { css } from "@emotion/core";
-import styled, { Theme } from "../../styled";
+import { Theme } from "../../styled";
 import shared from "../../utils/styles/shared";
 import { Button } from "../Button";
 import { ReactComponent as IconCog } from "~/assets/images/icon-cog.svg";
 import { ReactComponent as IconPerson } from "~/assets/images/icon-person.svg";
 import { ReactComponent as IconChart } from "~/assets/images/icon-chart.svg";
 import FormField from "../FormField";
+import { ReactComponent as BgPattern } from "~/assets/images/bg-pattern-contact-2.svg";
 
 const baseStyles = (theme: Theme) => css`
   background-color: ${theme.color.primary.dark};
@@ -37,10 +38,19 @@ const submitButtonStyles = (theme: Theme) => css`
   color: ${theme.color.secondary.dark};
 `;
 
+const bgPatternStyles = css`
+  position: absolute;
+  right: -100px;
+  bottom: -100px;
+  width: 200px;
+  display: block;
+`;
+
 const ContactForm = () => {
   return (
     <div css={(theme) => [shared.componentContainerStyles, baseStyles(theme)]}>
       <div css={shared.componentContentStyles}>
+        <BgPattern css={bgPatternStyles} />
         <div>
           <h2>Contact</h2>
           <h4>Ask us about</h4>
@@ -89,15 +99,15 @@ const ContactForm = () => {
               e.preventDefault();
             }}
           >
-            <FormField label="Name" name="name" inputType="text" />
-            <FormField label="Email" name="email" inputType="email" />
+            <FormField label="Name" name="name" inputType="text" required />
+            <FormField label="Email" name="email" inputType="email" required />
             <FormField
               label="Company Name"
               name="company_name"
               inputType="text"
             />
             <FormField label="Title" name="title" inputType="text" />
-            <FormField label="Message" name="message" inputType="text" />
+            <FormField label="Message" name="message" inputType="textarea" />
             <Button css={submitButtonStyles}>Submit</Button>
           </form>
         </div>
