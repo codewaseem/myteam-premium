@@ -8,6 +8,8 @@ import { ReactComponent as IconPerson } from "~/assets/images/icon-person.svg";
 import { ReactComponent as IconChart } from "~/assets/images/icon-chart.svg";
 import FormField from "../FormField";
 import { ReactComponent as BgPattern } from "~/assets/images/bg-pattern-contact-2.svg";
+import { ReactComponent as BgPattern2 } from "~/assets/images/bg-pattern-about-2-contact-1.svg";
+import { above } from "../../utils/styles";
 
 const baseStyles = (theme: Theme) => css`
   background-color: ${theme.color.primary.dark};
@@ -32,6 +34,17 @@ const baseStyles = (theme: Theme) => css`
   }
 `;
 
+const tabletStyles = css`
+  > div {
+    --content-width: 515px;
+  }
+
+  h2 {
+    font-size: 64px;
+    line-height: 56px;
+  }
+`;
+
 const submitButtonStyles = (theme: Theme) => css`
   background-color: ${theme.color.primary.light};
   border-color: ${theme.color.primary.light};
@@ -44,13 +57,43 @@ const bgPatternStyles = css`
   bottom: -100px;
   width: 200px;
   display: block;
+
+  ${above(
+    "md",
+    css`
+      bottom: 0px;
+    `
+  )}
+`;
+
+const bgPattern2Styles = css`
+  display: none;
+
+  ${above(
+    "md",
+    css`
+      display: block;
+      position: absolute;
+      top: 80px;
+      height: 200px;
+      width: 200px;
+      left: -100px;
+    `
+  )}
 `;
 
 const ContactForm = () => {
   return (
-    <div css={(theme) => [shared.componentContainerStyles, baseStyles(theme)]}>
+    <div
+      css={(theme) => [
+        shared.componentContainerStyles,
+        baseStyles(theme),
+        tabletStyles,
+      ]}
+    >
+      <BgPattern css={bgPatternStyles} />
+      <BgPattern2 css={bgPattern2Styles} />
       <div css={shared.componentContentStyles}>
-        <BgPattern css={bgPatternStyles} />
         <div>
           <h2>Contact</h2>
           <h4>Ask us about</h4>
