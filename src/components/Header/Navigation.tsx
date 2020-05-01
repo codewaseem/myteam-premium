@@ -7,6 +7,7 @@ import { ReactComponent as BgPattern } from "~/assets/images/bg-pattern-about-1-
 import { Button } from "../Button";
 import { spacer, above } from "../../utils/styles";
 import { Theme } from "../../styled";
+import { Link } from "gatsby";
 
 const baseStyles = (theme: Theme) => css`
   flex: 1;
@@ -143,7 +144,14 @@ const Navigation: React.FC<{
             <li>about</li>
           </ul>
         </nav>
-        <Button>contact us</Button>
+        <Link
+          to="/contact"
+          css={css`
+            display: inline-block;
+          `}
+        >
+          <Button>contact us</Button>
+        </Link>
         {isNavOpen && <BgPattern css={navBgPatternStyles} />}
       </div>
       {!isNavOpen ? (
