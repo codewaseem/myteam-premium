@@ -9,7 +9,7 @@ import { ReactComponent as IconChart } from "~/assets/images/icon-chart.svg";
 import FormField from "../FormField";
 import { ReactComponent as BgPattern } from "~/assets/images/bg-pattern-contact-2.svg";
 import { ReactComponent as BgPattern2 } from "~/assets/images/bg-pattern-about-2-contact-1.svg";
-import { above } from "../../utils/styles";
+import { above, between } from "../../utils/styles";
 
 const baseStyles = (theme: Theme) => css`
   background-color: ${theme.color.primary.dark};
@@ -35,14 +35,42 @@ const baseStyles = (theme: Theme) => css`
 `;
 
 const tabletStyles = css`
-  > div {
-    --content-width: 515px;
-  }
+  ${between(
+    "md",
+    "xxl",
+    css`
+      > div {
+        --content-width: 515px;
+      }
 
-  h2 {
-    font-size: 64px;
-    line-height: 56px;
-  }
+      h2 {
+        font-size: 64px;
+        line-height: 56px;
+      }
+    `
+  )}
+`;
+
+const desktopStyles = css`
+  ${above(
+    "xxl",
+    css`
+      > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        h2,
+        h4 {
+          text-align: left;
+        }
+
+        h2 {
+          font-size: 64px;
+          line-height: 100px;
+        }
+      }
+    `
+  )}
 `;
 
 const submitButtonStyles = (theme: Theme) => css`
@@ -89,6 +117,7 @@ const ContactForm = () => {
         shared.componentContainerStyles,
         baseStyles(theme),
         tabletStyles,
+        desktopStyles,
       ]}
     >
       <BgPattern css={bgPatternStyles} />
