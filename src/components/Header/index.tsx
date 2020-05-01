@@ -7,6 +7,7 @@ import { ReactComponent as Logo } from "~/assets/images/logo.svg";
 import { above, between } from "../../utils/styles";
 import shared from "../../utils/styles/shared";
 import Navigation from "./Navigation";
+import { Link } from "gatsby";
 
 function headerStyles(theme: Theme) {
   return css`
@@ -68,7 +69,14 @@ const Header: React.FC<{
       ]}
     >
       <div css={[shared.componentContentStyles, overrideContentStyles]}>
-        <Logo css={logoStyles} />
+        <Link
+          to="/"
+          css={css`
+            display: inline-block;
+          `}
+        >
+          <Logo css={logoStyles} />
+        </Link>
         <Navigation
           isNavOpen={isNavOpen}
           onOpenNav={onOpenNav}

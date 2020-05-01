@@ -1,5 +1,6 @@
 import React from "react";
 import { css } from "@emotion/core";
+import { Link } from "gatsby";
 import { ReactComponent as BgPattern } from "~/assets/images/bg-pattern-home-6-about-5.svg";
 import { Button } from "../Button";
 import { Theme } from "~/styled";
@@ -89,7 +90,14 @@ const ContactUs = () => (
       ]}
     >
       <h3>Ready to get started?</h3>
-      <Button variant="dark">contact us</Button>
+      <Link
+        to="/contact"
+        css={css`
+          display: inline-block;
+        `}
+      >
+        <Button variant="dark">contact us</Button>
+      </Link>
     </div>
   </div>
 );
