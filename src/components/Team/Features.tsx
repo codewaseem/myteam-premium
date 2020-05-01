@@ -1,4 +1,4 @@
-import React, { SVGProps } from "react";
+import React from "react";
 import { css, SerializedStyles } from "@emotion/core";
 import { Theme } from "../../styled";
 import { above } from "../../utils/styles";
