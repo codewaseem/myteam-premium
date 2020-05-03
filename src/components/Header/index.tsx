@@ -26,6 +26,13 @@ function headerStyles(theme: Theme) {
         padding-top: ${rem("64px")};
       `
     )}
+
+    ${above(
+      "xxl",
+      css`
+        padding-top: 73px;
+      `
+    )}
   `;
 }
 
