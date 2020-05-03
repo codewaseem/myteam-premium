@@ -8,8 +8,15 @@ import shared from "../utils/styles/shared";
 import { ReactComponent as BgPatternOne } from "~/assets/images/bg-pattern-about-1-mobile-nav-1.svg";
 import { ReactComponent as BgPatternTwo } from "~/assets/images/bg-pattern-about-2-contact-1.svg";
 import { ReactComponent as BgPatternThree } from "~/assets/images/bg-pattern-home-4-about-3.svg";
+import { ReactComponent as BgPatternFour } from "~/assets/images/bg-pattern-about-4.svg";
 import { above } from "../utils/styles";
 import Directors from "../components/Directors";
+import vergeLogo from "~/assets/images/logo-the-verge.png";
+import jakartaLogo from "~/assets/images/logo-jakarta-post.png";
+import guardianLogo from "~/assets/images/logo-the-guardian.png";
+import techRadarLogo from "~/assets/images/logo-tech-radar.png";
+import gadgetsLogo from "~/assets/images/logo-gadgets-now.png";
+import ContactUs from "../components/ContactUs";
 
 const AboutUs = styled.div`
   ${shared.componentContainerStyles}
@@ -117,6 +124,28 @@ const bgPatternThreeStyles = css`
   bottom: 0;
 `;
 
+const bgPatternFourStyles = css`
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  top: -100px;
+  left: -100px;
+
+  ${above(
+    "md",
+    css`
+      left: 0;
+    `
+  )}
+
+  ${above(
+    "xxl",
+    css`
+      top: 0;
+    `
+  )}
+`;
+
 const MeetDirectors = styled.div`
   ${shared.componentContainerStyles};
   position: relative;
@@ -125,6 +154,9 @@ const MeetDirectors = styled.div`
   padding-top: 88px;
   padding-bottom: 116px;
 
+  > div {
+    ${shared.componentContentStyles}
+  }
   h2 {
     font-size: 32px;
     line-height: 32px;
@@ -150,7 +182,84 @@ const MeetDirectors = styled.div`
     `
   )}
 `;
-const OurClients = styled.div``;
+
+const OurClients = styled.div`
+  ${shared.componentContainerStyles}
+  background: ${({ theme }) => theme.color.secondary.darker};
+  position: relative;
+  overflow:hidden;
+  text-align:center;
+  padding-top:88px;
+  padding-bottom:88px;
+
+
+  > div {
+    ${shared.componentContentStyles};
+
+    h2 {
+      font-size: 32px;
+      line-height: 32px;
+      margin-bottom: 64px;
+    }
+
+    div {
+      display: grid;
+      grid-gap: 56px 49px;
+      margin: none;
+      width: 146px;
+      margin:auto;
+      justify-items:center;
+      > * {
+        max-height: 40px;
+        margin:0;
+      }
+    }
+  }
+
+  ${above(
+    "md",
+    css`
+      padding-top: 100px;
+      padding-bottom: 100px;
+      > div {
+        h2 {
+          margin-bottom: 48px;
+        }
+
+        > div {
+          grid-auto-flow: column;
+          width: 100%;
+          align-items: center;
+          > * {
+            max-height: 28px;
+          }
+        }
+      }
+    `
+  )}
+
+    ${above(
+      "xxl",
+      css`
+        padding-top: 140px;
+        padding-bottom: 140px;
+        > div {
+          h2 {
+            margin-bottom: 64px;
+          }
+          > div {
+            grid-auto-flow: column;
+            width: 100%;
+            grid-column-gap: 80px;
+            align-items: center;
+            > * {
+              max-height: 40px;
+            }
+          }
+        }
+      `
+    )}
+`;
 
 const AboutPage: React.FC<InjectedIntlProps> = () => {
   return (
@@ -169,14 +278,27 @@ const AboutPage: React.FC<InjectedIntlProps> = () => {
         <BgPatternOne css={bgPatternOneStyles} />
       </AboutUs>
       <MeetDirectors>
-        <div css={[shared.componentContentStyles]}>
+        <div>
           <BgPatternTwo css={bgPatternTwoStyles} />
           <BgPatternThree css={bgPatternThreeStyles} />
           <h2>Meet the directors</h2>
           <Directors />
         </div>
       </MeetDirectors>
-      <OurClients />
+      <OurClients>
+        <div>
+          <h2>Some of our clients</h2>
+          <div>
+            <img src={vergeLogo} alt="" />
+            <img src={jakartaLogo} alt="" />
+            <img src={guardianLogo} alt="" />
+            <img src={techRadarLogo} alt="" />
+            <img src={gadgetsLogo} alt="" />
+          </div>
+        </div>
+        <BgPatternFour css={bgPatternFourStyles} />
+      </OurClients>
+      <ContactUs />
     </Layout>
   );
 };
