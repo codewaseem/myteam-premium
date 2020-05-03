@@ -7,7 +7,7 @@ import ContactForm from "../components/ContactForm";
 const Index: React.FC<InjectedIntlProps> = () => {
   return (
     <Layout>
-      <SEO title="Hello" />
+      <SEO title="Contact Us" />
       <ContactForm />
     </Layout>
   );
