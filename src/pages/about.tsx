@@ -6,7 +6,10 @@ import { SEO } from "~/components/SEO";
 import styled from "../styled";
 import shared from "../utils/styles/shared";
 import { ReactComponent as BgPatternOne } from "~/assets/images/bg-pattern-about-1-mobile-nav-1.svg";
+import { ReactComponent as BgPatternTwo } from "~/assets/images/bg-pattern-about-2-contact-1.svg";
+import { ReactComponent as BgPatternThree } from "~/assets/images/bg-pattern-home-4-about-3.svg";
 import { above } from "../utils/styles";
+import Directors from "../components/Directors";
 
 const AboutUs = styled.div`
   ${shared.componentContainerStyles}
@@ -15,11 +18,11 @@ const AboutUs = styled.div`
   background: ${({ theme }) => theme.color.primary.dark};
   position: relative;
   overflow: hidden;
+  padding-top: 80px;
+  padding-bottom: 108px;
 
   > div {
     ${shared.componentContentStyles}
-    margin-top: 80px;
-    margin-bottom: 108px;
 
     h1 {
       font-size: 40px;
@@ -36,6 +39,8 @@ const AboutUs = styled.div`
   ${above(
     "md",
     css`
+      padding-top: 112px;
+      padding-bottom: 112px;
       > div {
         h1 {
           font-size: 64px;
@@ -53,6 +58,8 @@ const AboutUs = styled.div`
   ${above(
     "xxl",
     css`
+      padding-top: 120px;
+      padding-bottom: 120px;
       > div {
         display: grid;
         grid-template-columns: 350px 730px;
@@ -88,7 +95,61 @@ const bgPatternOneStyles = css`
   )}
 `;
 
-const MeetDirectors = styled.div``;
+const bgPatternTwoStyles = css`
+  height: 200px;
+  width: 200px;
+  display: block;
+  position: absolute;
+  left: -100px;
+  top: -100px;
+  ${above(
+    "md",
+    css`
+      top: 0;
+    `
+  )}
+`;
+
+const bgPatternThreeStyles = css`
+  height: 100px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+`;
+
+const MeetDirectors = styled.div`
+  ${shared.componentContainerStyles};
+  position: relative;
+  overflow: hidden;
+  background-color: ${({ theme }) => theme.color.secondary.dark};
+  padding-top: 88px;
+  padding-bottom: 116px;
+
+  h2 {
+    font-size: 32px;
+    line-height: 32px;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+  ${above(
+    "md",
+    css`
+      padding-top: 100px;
+      padding-bottom: 128px;
+    `
+  )}
+  ${above(
+    "xxl",
+    css`
+      padding-top: 140px;
+      padding-bottom: 168px;
+      h2 {
+        font-size: 48px;
+        line-height: 48px;
+      }
+    `
+  )}
+`;
 const OurClients = styled.div``;
 
 const AboutPage: React.FC<InjectedIntlProps> = () => {
@@ -107,7 +168,14 @@ const AboutPage: React.FC<InjectedIntlProps> = () => {
         </div>
         <BgPatternOne css={bgPatternOneStyles} />
       </AboutUs>
-      <MeetDirectors />
+      <MeetDirectors>
+        <div css={[shared.componentContentStyles]}>
+          <BgPatternTwo css={bgPatternTwoStyles} />
+          <BgPatternThree css={bgPatternThreeStyles} />
+          <h2>Meet the directors</h2>
+          <Directors />
+        </div>
+      </MeetDirectors>
       <OurClients />
     </Layout>
   );
