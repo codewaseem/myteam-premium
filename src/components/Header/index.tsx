@@ -2,12 +2,12 @@ import React from "react";
 import { css } from "@emotion/core";
 import { Theme } from "@theme/styled";
 import { rem } from "polished";
+import { Link } from "gatsby";
 import { ReactComponent as Logo } from "~/assets/images/logo.svg";
 
 import { above, between } from "../../utils/styles";
 import shared from "../../utils/styles/shared";
 import Navigation from "./Navigation";
-import { Link } from "gatsby";
 
 function headerStyles(theme: Theme) {
   return css`

@@ -1,13 +1,13 @@
 import React from "react";
 import { css } from "@emotion/core";
 import { rem } from "polished";
+import { Link } from "gatsby";
 import { ReactComponent as Hamburger } from "~/assets/images/icon-hamburger.svg";
 import { ReactComponent as CloseIcon } from "~/assets/images/icon-close.svg";
 import { ReactComponent as BgPattern } from "~/assets/images/bg-pattern-about-1-mobile-nav-1.svg";
 import { Button } from "../Button";
 import { spacer, above } from "../../utils/styles";
 import { Theme } from "../../styled";
-import { Link } from "gatsby";
 
 const baseStyles = (theme: Theme) => css`
   flex: 1;
@@ -28,6 +28,11 @@ const baseStyles = (theme: Theme) => css`
       li {
         cursor: pointer;
         margin-right: 40px;
+
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
       }
     }
   }
@@ -140,8 +145,12 @@ const Navigation: React.FC<{
       <div>
         <nav>
           <ul>
-            <li>home</li>
-            <li>about</li>
+            <li>
+              <Link to="/">home</Link>
+            </li>
+            <li>
+              <Link to="/about">about</Link>
+            </li>
           </ul>
         </nav>
         <Link
@@ -155,17 +164,9 @@ const Navigation: React.FC<{
         {isNavOpen && <BgPattern css={navBgPatternStyles} />}
       </div>
       {!isNavOpen ? (
-        <Hamburger
-          css={hamburgerStyles}
-          onClick={onOpenNav}
-          onTouchEnd={onOpenNav}
-        />
+        <Hamburger css={hamburgerStyles} onClick={onOpenNav} />
       ) : (
-        <CloseIcon
-          css={closeIconStyles}
-          onClick={onCloseNav}
-          onTouchEnd={onCloseNav}
-        />
+        <CloseIcon css={closeIconStyles} onClick={onCloseNav} />
       )}
     </div>
   );
